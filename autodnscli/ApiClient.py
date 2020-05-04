@@ -45,7 +45,7 @@ class ApiClient:
     def call_api(self, xml_str):
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
         response = ET.fromstring(
-            requests.post('https://gateway.autodns.com/', data=xml_str, headers=headers).text)
+            requests.post('https://gateway.schlundtech.de', data=xml_str, headers=headers).text)
 
         if response.find('result/status/type').text != 'success':
             raise Exception('Response not successful: ' + response.find('result/status/type').text
